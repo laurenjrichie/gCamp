@@ -9,15 +9,23 @@
 <body>
 
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid col-md-offset-1">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">gCamp</a>
-      </div>
+    <div class="row container-fluid col-md-offset-1">
+      <h4><%= link_to 'gCamp', root_path %></h4>
     </div><!-- /.container-fluid -->
   </nav>
 
   <%= yield %>
+
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container-fluid col-md-offset-1">
+      <div class="navbar-header">
+        <h4>
+          <%= link_to 'About', about_path %> |
+          <%= link_to 'Terms', terms_path %>
+        </h4>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
 
 </body>
 
