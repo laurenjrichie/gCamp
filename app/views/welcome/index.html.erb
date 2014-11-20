@@ -52,8 +52,12 @@
 
   <div class="row container">
     <% @quotes.each do |quote| %>
-      <p class="lead"><%= quote %></p>
+      <blockquote>
+        <p class="lead"><%= quote[0] %></p>
+        <p><em><%= quote[1] %></em></p>
+      </blockquote>
     <% end %>
   </div>
+
 
 </div>
