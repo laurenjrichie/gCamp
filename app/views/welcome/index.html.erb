@@ -6,25 +6,25 @@
 
   <div class="row">
     <div class="col-md-4">
-      <img class="img-responsive" src="http://www.imcreator.com/wp-content/uploads/2014/11/wpid-Featured_Picture157-1024x682.jpg"/>
+      <%= image_tag 'tablet.jpg', class: 'img-responsive' %>
       <br>
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Tasks</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body fixed-panel">
           Grouped by comments and lists. Just the way you like'em.
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="http://www.imcreator.com/wp-content/uploads/2014/01/wpid-Featured_Picture38-620x413.jpg"/>
+      <%= image_tag 'paper.jpg', class: 'img-responsive' %>
       <br>
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Documents</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body fixed-panel">
           <ul>
             <li>Upload</li>
             <li>Comment</li>
@@ -34,13 +34,12 @@
       </div>
     </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="http://www.imcreator.com/wp-content/uploads/2014/11/wpid-Featured_Picture86-1024x682.jpg"/>
-      <br>
+      <%= image_tag 'computers.jpg', class: 'img-responsive' %>      <br>
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Comments</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body fixed-panel">
           <ul>
             <li>Comment on tasks and documents</li>
             <li>Get email notifications</li>
@@ -52,10 +51,10 @@
 
   <div class="row container">
     <% @quotes.each do |quote| %>
-      <blockquote>
-        <p class="lead"><%= quote[0] %></p>
-        <p><em><%= quote[1] %></em></p>
-      </blockquote>
+    <blockquote>
+      <p class="lead"><%= quote[0] %></p>
+      <p><em><%= quote[1] %></em></p>
+    </blockquote>
     <% end %>
   </div>
 
