@@ -1,1 +1,9 @@
-faq coming soon
+<div class="container">
+  <h1>Frequently Asked Questions</h1>
+  <div class="col-md-10">
+    <% @faqs.each do |faq| %>
+      <h3><%= faq[0] %></h3>
+      <p class="lead"><%= faq[1] %></p>
+    <% end %>
+  </div>
+</div>
