@@ -1,0 +1,3 @@
+class FaqController < ApplicationController
+
+end
