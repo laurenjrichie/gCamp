@@ -1,6 +1,13 @@
 <div class="container">
 
-  <h1>Listing tasks</h1>
+  <div class="page-header">
+    <div class="row">
+      <h1>
+        Listing tasks
+        <%= link_to 'New Task', new_task_path, class: "btn btn-info pull-right" %>
+      </h1>
+    </div>
+  </div>
 
   <table class="table">
     <thead>
@@ -13,10 +20,10 @@
     <tbody>
       <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.description %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="col-md-10"><%= task.description %></td>
+        <td><%= link_to 'Show', task, class: "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_task_path(task), class: "btn btn-info" %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
       <% end %>
     </tbody>
@@ -24,7 +31,6 @@
 
   <br>
 
-  <%= link_to 'New Task', new_task_path %><br>
-  <%= link_to 'Download CSV list', tasks_path(format: :csv) %>
+  <%= link_to 'Download CSV list', tasks_path(format: :csv), class: "btn btn-info" %>
 
 </div>

@@ -16,6 +16,10 @@
     </div>
   </nav>
 
+  <% if notice %>
+    <p id="notice" class="container alert alert-success text-center"><%= notice %></p>
+  <% end %>
+
   <%= yield %>
 
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
