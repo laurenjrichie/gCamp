@@ -2,8 +2,8 @@
   <h1>Frequently Asked Questions</h1>
   <div class="col-md-10">
     <% @faqs.each do |faq| %>
-      <h3><%= faq[0] %></h3>
-      <p class="lead"><%= faq[1] %></p>
+      <h3><%= faq.question %></h3>
+      <p><%= faq.answer %></p>
     <% end %>
   </div>
 </div>
