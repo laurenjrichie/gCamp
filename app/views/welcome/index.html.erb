@@ -5,25 +5,40 @@
 
 <div class="row">
   <div class="col-md-4">
-    <%= image_tag 'tablet.jpg', class: 'img-responsive' %>
-    <br>
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
+      <%= image_tag 'tablet.jpg', class: 'img-responsive' %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <%= image_tag 'paper.jpg', class: 'img-responsive' %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <%= image_tag 'computers.jpg', class: 'img-responsive' %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-primary panel-height">
       <div class="panel-heading">
         <h3 class="panel-title">Tasks</h3>
       </div>
-      <div class="panel-body fixed-panel">
+      <div class="panel-body">
         Grouped by comments and lists. Just the way you like'em.
       </div>
     </div>
   </div>
+
   <div class="col-md-4">
-    <%= image_tag 'paper.jpg', class: 'img-responsive' %>
-    <br>
-    <div class="panel panel-primary">
+    <div class="panel panel-primary panel-height">
       <div class="panel-heading">
         <h3 class="panel-title">Documents</h3>
       </div>
-      <div class="panel-body fixed-panel">
+      <div class="panel-body">
         <ul>
           <li>Upload</li>
           <li>Comment</li>
@@ -32,13 +47,13 @@
       </div>
     </div>
   </div>
+
   <div class="col-md-4">
-    <%= image_tag 'computers.jpg', class: 'img-responsive' %>      <br>
-    <div class="panel panel-primary">
+    <div class="panel panel-primary panel-height">
       <div class="panel-heading">
         <h3 class="panel-title">Comments</h3>
       </div>
-      <div class="panel-body fixed-panel">
+      <div class="panel-body">
         <ul>
           <li>Comment on tasks and documents</li>
           <li>Get email notifications</li>
@@ -47,6 +62,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="row container">
   <% @quotes.each do |quote| %>
