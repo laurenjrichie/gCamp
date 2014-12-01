@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -17,10 +17,12 @@
   </nav>
 
   <% if notice %>
-    <p id="notice" class="container alert alert-success text-center"><%= notice %></p>
+  <p id="notice" class="container alert alert-success text-center"><%= notice %></p>
   <% end %>
 
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
     <div class="container container-fluid">

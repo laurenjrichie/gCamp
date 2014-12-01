@@ -1,62 +1,58 @@
-<div class="container">
-  <div class="jumbotron">  <!-- rounded corners and no border OK? -->
-    <h1>gCamp</h1>
-    <p>Your life, organized.</p>
-  </div>
+<div class="jumbotron">  <!-- rounded corners and no border OK? -->
+  <h1>gCamp</h1>
+  <p>Your life, organized.</p>
+</div>
 
-  <div class="row">
-    <div class="col-md-4">
-      <%= image_tag 'tablet.jpg', class: 'img-responsive' %>
-      <br>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Tasks</h3>
-        </div>
-        <div class="panel-body fixed-panel">
-          Grouped by comments and lists. Just the way you like'em.
-        </div>
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag 'tablet.jpg', class: 'img-responsive' %>
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Tasks</h3>
       </div>
-    </div>
-    <div class="col-md-4">
-      <%= image_tag 'paper.jpg', class: 'img-responsive' %>
-      <br>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Documents</h3>
-        </div>
-        <div class="panel-body fixed-panel">
-          <ul>
-            <li>Upload</li>
-            <li>Comment</li>
-            <li>Revise</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <%= image_tag 'computers.jpg', class: 'img-responsive' %>      <br>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Comments</h3>
-        </div>
-        <div class="panel-body fixed-panel">
-          <ul>
-            <li>Comment on tasks and documents</li>
-            <li>Get email notifications</li>
-          </ul>
-        </div>
+      <div class="panel-body fixed-panel">
+        Grouped by comments and lists. Just the way you like'em.
       </div>
     </div>
   </div>
-
-  <div class="row container">
-    <% @quotes.each do |quote| %>
-    <blockquote>
-      <p class="lead"><%= quote[0] %></p>
-      <p><em><%= quote[1] %></em></p>
-    </blockquote>
-    <% end %>
+  <div class="col-md-4">
+    <%= image_tag 'paper.jpg', class: 'img-responsive' %>
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Documents</h3>
+      </div>
+      <div class="panel-body fixed-panel">
+        <ul>
+          <li>Upload</li>
+          <li>Comment</li>
+          <li>Revise</li>
+        </ul>
+      </div>
+    </div>
   </div>
+  <div class="col-md-4">
+    <%= image_tag 'computers.jpg', class: 'img-responsive' %>      <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Comments</h3>
+      </div>
+      <div class="panel-body fixed-panel">
+        <ul>
+          <li>Comment on tasks and documents</li>
+          <li>Get email notifications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-
+<div class="row container">
+  <% @quotes.each do |quote| %>
+  <blockquote>
+    <p class="lead"><%= quote[0] %></p>
+    <p><em><%= quote[1] %></em></p>
+  </blockquote>
+  <% end %>
 </div>
