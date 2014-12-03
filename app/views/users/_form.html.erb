@@ -29,5 +29,10 @@
         <%= f.email_field :email, class: "form-control" %>
       </div>
   </div>
-
+  <div class="form-group">
+    <div class="col-md-10 col-md-offset-1">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to 'cancel', users_path, class: "btn btn-default" %>
+    </div>
+  </div>
 <% end %>
