@@ -15,6 +15,15 @@
   </thead>
 
   <tbody>
-
+    <% @users.each do |doctor| %>
+    <tr>
+      <td class="col-sm-2">
+        <%= doctor.first_name %><%= doctor.last_name %>
+      </td>
+      <td class="col-sm-10"> <!--formatting of lines off here -->
+        <%= doctor.email %>
+      </td>
+    </tr>
+    <% end %>
   </tbody>
 </table>
