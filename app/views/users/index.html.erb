@@ -10,17 +10,21 @@
     <tr>
       <th class="col-sm-2">Name</th>
       <th class="col-sm-2">Email</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |doctor| %>
+    <% @users.each do |user| %>
     <tr>
       <td class="col-sm-2">
-        <%= doctor.first_name %> <%= doctor.last_name %>
+        <%= user.first_name %> <%= user.last_name %>
       </td>
       <td class="col-sm-10">
-        <%= mail_to(doctor.email) %>
+        <%= mail_to(user.email) %>
+      </td>
+      <td>
+        <%= link_to 'edit', edit_user_path(user) %>
       </td>
     </tr>
     <% end %>
