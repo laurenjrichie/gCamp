@@ -8,15 +8,15 @@
 <table class="table">
   <thead>
     <tr>
-      <th class="col-sm-2">Name</th>
+      <th>Name</th>
     </tr>
   </thead>
 
   <tbody>
     <% @projects.each do |project| %>
     <tr>
-      <td class="col-sm-2">
-        <%= link_to "Name", project_path(project) %>
+      <td>
+        <%= link_to project.name, project_path(project) %>
       </td>
     </tr>
     <% end %>
