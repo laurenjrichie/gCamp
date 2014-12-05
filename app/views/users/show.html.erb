@@ -1,0 +1,19 @@
+<h1 class="page-header">
+  <%= @user.first_name %> <%= @user.last_name %>
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-info pull-right" %>
+</h1>
+
+<dl class="dl-horizontal">
+  <dt>First name</dt>
+  <dd><%= @user.first_name %></dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt>Last name</dt>
+  <dd><%= @user.last_name %></dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt>Email</dt>
+  <dd><%= mail_to(@user.email) %></dd>
+</dl>

@@ -18,7 +18,7 @@
     <% @users.each do |user| %>
     <tr>
       <td class="col-sm-2">
-        <%= user.first_name %> <%= user.last_name %>
+        <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
       </td>
       <td class="col-sm-10">
         <%= mail_to(user.email) %>

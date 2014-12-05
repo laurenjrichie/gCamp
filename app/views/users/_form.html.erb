@@ -35,4 +35,11 @@
     <%= link_to 'cancel', users_path, class: "btn btn-default" %>
   </div>
 </div>
+<div class="form-group">
+  <div class="col-sm-6 col-sm-offset-2">
+    <div class="well text-center">
+      <%= link_to 'Delete User', user_path(@user), method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
 <% end %>
