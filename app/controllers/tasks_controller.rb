@@ -2,10 +2,10 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
+    @tasks = Task.all
+
     if params[:completed]
       @tasks = Task.where(:completed => params[:completed])
-    else
-      @tasks = Task.all
     end
 
     respond_to do |format|
