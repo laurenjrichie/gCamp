@@ -1,6 +1,6 @@
 <div class="page-header">
   <div class="pull-right">
-    <% if task_completed?(@task) %>
+    <% if params[:completed] == "false" %>
       <%= link_to 'All', tasks_path %> | Incomplete
     <% else %>
       All | <%= link_to 'Incomplete', tasks_path(:completed=>"false") %>
