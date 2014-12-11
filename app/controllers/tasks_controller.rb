@@ -8,6 +8,22 @@ class TasksController < ApplicationController
       @tasks = Task.where(:completed => params[:completed])
     end
 
+     if params[:order_description] == "true"
+       @tasks = Task.all.order(:description)
+     end
+
+     if params[:completed] && params[:order_description] == "true"
+       @tasks = Task.where(:completed => params[:completed]).order(:description)
+     end
+
+     if params[:order_due_date] == "true"
+       @tasks = Task.all.order(:due_date)
+     end
+
+     if params[:completed] && params[:order_due_date] == "true"
+       @tasks = Task.where(:completed => params[:completed]).order(:due_date)
+     end
+
     respond_to do |format|
       format.html
       format.csv do

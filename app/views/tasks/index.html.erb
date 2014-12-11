@@ -3,7 +3,7 @@
     <% if params[:completed] == "false" %>
       <%= link_to 'All', tasks_path %> | Incomplete
     <% else %>
-      All | <%= link_to 'Incomplete', tasks_path(:completed=>"false") %>
+      All | <%= link_to 'Incomplete', tasks_path({:completed=>"false"}) %>
     <% end %>
     <%= link_to 'New Task', new_task_path, class: "btn btn-info" %>
   </div>
@@ -13,9 +13,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Complete</th>
-      <th>Due</th>
+      <th><%= link_to "Description", tasks_path({order_description: true, completed: params[:completed]}) %></th>
+      <th><%= link_to "Complete", tasks_path({completed: "true"}) %></th>
+      <th><%= link_to "Due", tasks_path({order_due_date: true, completed: params[:completed]}) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
