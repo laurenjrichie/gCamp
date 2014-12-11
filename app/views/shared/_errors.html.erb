@@ -1,0 +1,11 @@
+<% if specific_resource.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger col-md-11 col-md-offset-1">
+    <h2><%= pluralize(specific_resource.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+    <ul>
+    <% specific_resource.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
