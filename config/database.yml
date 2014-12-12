@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: gcamp_production
-  username: gcamp
-  password: <%= ENV['GCAMP_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: gcamp_production
+#   username: gcamp
+#   password: <%= ENV['GCAMP_DATABASE_PASSWORD'] %>
