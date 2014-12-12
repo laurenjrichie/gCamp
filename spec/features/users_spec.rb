@@ -12,6 +12,7 @@ feature 'CRUDing users' do
     click_on "Create User"
 
     expect(page).to have_content("Shamus McSteamy")
+    expect(page).to have_content("User was successfully created")
   end
 
   scenario 'Edit a user' do
@@ -29,6 +30,7 @@ feature 'CRUDing users' do
     click_on "Update User"
 
     expect(page).to have_content("Cringle McJingle")
+    expect(page).to have_content("User was successfully updated")
   end
 
   scenario 'List all users' do
@@ -90,6 +92,7 @@ feature 'CRUDing users' do
     click_on "Delete User"
 
     expect(page).to_not have_content("Delete Me")
+    expect(page).to have_content("User was successfully deleted")
   end
 
 end
