@@ -15,7 +15,7 @@ feature 'CRUDing projects' do
 
   scenario 'Edit a project' do
     Project.create!(
-    name: "Project to Edit",
+      name: "Project to Edit",
     )
 
     visit root_path
@@ -25,18 +25,19 @@ feature 'CRUDing projects' do
     fill_in :project_name, with: 'Edited Project'
     click_on "Update Project"
 
+    expect(page).to have_content("Edited Project")
     expect(page).to have_content("Project was successfully updated")
   end
 
   scenario 'List all projects' do
     Project.create!(
-    name: "Project1",
+      name: "Project1",
     )
     Project.create!(
-    name: "Project2",
+      name: "Project2",
     )
     Project.create!(
-    name: "Project3",
+      name: "Project3",
     )
 
     visit root_path
