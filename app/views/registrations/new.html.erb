@@ -1,29 +1,39 @@
-<div class="well">
+<div class="well col-md-8 col-md-offset-2">
+  <h1>Sign Up for gCamp!</h1>
   <%= form_for(@user, html: {class: "form-group"}) do |f| %>
-
     <div class="form-group">
-        <%= f.label :first_name, class: "col-sm-1 control-label" %>
-        <div class="col-sm-6">
+        <%= f.label :first_name, class: "control-label" %>
+        <!-- <div class=""> -->
           <%= f.text_field :first_name, class: "form-control" %>
+        <!-- </div> -->
+    </div>
+    <div class="form-group">
+        <%= f.label :last_name, class: "control-label" %>
+        <div class="">
+          <%= f.text_field :last_name, class: "form-control" %>
         </div>
     </div>
     <div class="form-group">
-        <%= f.label :last_name, class: "col-sm-1 control-label" %>
-        <div class="col-sm-2">
-          <%= f.date_field :last_name, class: "form-control" %>
+        <%= f.label :email, class: "control-label" %>
+        <div class="">
+          <%= f.email_field :email, class: "form-control" %>
         </div>
     </div>
     <div class="form-group">
-        <%= f.label :email, class: "col-sm-1 control-label" %>
-        <div class="col-sm-2">
-          <%= f.date_field :email, class: "form-control" %>
+        <%= f.label :password, class: "control-label" %>
+        <div class="">
+          <%= f.password_field :password, class: "form-control" %>
         </div>
     </div>
-
     <div class="form-group">
-      <div class="col-md-10 col-md-offset-1">
-        <%= f.submit class: "btn btn-primary" %>
-        <%= link_to 'cancel', tasks_path, class: "btn btn-default" %>
+        <%= f.label :password_confirmation, class: "control-label" %>
+        <div class="">
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+      <div class="">
+        <%= f.submit "Sign Up", class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
