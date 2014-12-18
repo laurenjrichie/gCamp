@@ -9,6 +9,8 @@ feature 'CRUDing users' do
     fill_in :user_first_name, with: 'Shamus'
     fill_in :user_last_name, with: "McSteamy"
     fill_in :user_email, with: "shamus@mcsteamy.com"
+    fill_in :user_password, with: "shamuspw"
+    fill_in :user_password_confirmation, with: "shamuspw"
     click_on "Create User"
 
     expect(page).to have_content("Shamus McSteamy")
@@ -20,6 +22,8 @@ feature 'CRUDing users' do
       first_name: "Lamus",
       last_name: "McReamy",
       email: "lamus@mcsteamy.com",
+      password: "lamuspw",
+      password_confirmation: "lamuspw",
     )
 
     visit root_path
@@ -38,16 +42,22 @@ feature 'CRUDing users' do
       first_name: "Momo",
       last_name: "Mo",
       email: "momo@momo.com",
+      password: "momopw",
+      password_confirmation: "momopw",
     )
     User.create!(
       first_name: "Yoyo",
       last_name: "Yo",
       email: "yoyo@yoyo.com",
+      password: "yoyopw",
+      password_confirmation: "yoyopw",
     )
     User.create!(
       first_name: "Lolo",
       last_name: "Lo",
       email: "lolo@lolo.com",
+      password: "lolopw",
+      password_confirmation: "lolopw",
     )
 
     visit root_path
@@ -63,12 +73,16 @@ feature 'CRUDing users' do
       first_name: "Show",
       last_name: "Me",
       email: "showme@showme.com",
+      password: "showpw",
+      password_confirmation: "showpw",
     )
 
     User.create!(
       first_name: "Dontshow",
       last_name: "Me",
       email: "dontshowme@no.com",
+      password: "dontpw",
+      password_confirmation: "dontpw",
     )
 
     visit root_path
@@ -83,6 +97,8 @@ feature 'CRUDing users' do
       first_name: "Delete",
       last_name: "Me",
       email: "delete@me.com",
+      password: "deletepw",
+      password_confirmation: "deletepw",
     )
 
     visit root_path
