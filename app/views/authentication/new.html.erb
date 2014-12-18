@@ -5,16 +5,18 @@
   <%= form_tag signin_path do |f| %>
 
     <% if @sign_in_error %>
-      <p>
+      <p class="alert alert-danger">
         <%= @sign_in_error %>
       </p>
     <% end %>
 
     <div class="form-group">
-      <%= label_tag :email %>
-    </div>
-    <div>
-      <%= email_field_tag :email %>
+      <div class="control-label">
+        <%= label_tag :email %>
+      </div>
+      <div class="">
+        <%= email_field_tag :email, nil, class: "form-control" %>
+      </div>
     </div>
 
     <div class="form-group">
@@ -22,7 +24,7 @@
         <%= label_tag :password %>
       </div>
       <div>
-        <%= password_field_tag :password %>
+        <%= password_field_tag :password, nil, class: "form-control" %>
       </div>
     </div>
 
