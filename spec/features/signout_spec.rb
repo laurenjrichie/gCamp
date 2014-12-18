@@ -20,8 +20,7 @@ feature 'Signing out' do
     expect(page).to have_content("New Signout")
     expect(page).to have_content("Sign Out")
 
-    save_and_open_page
-    click_on "Sign Out"  # why signout_path not working here?
+    click_on "Sign Out"
     expect(page).to have_content("Sign In")
     expect(page).to_not have_content("Sign Out")
   end
