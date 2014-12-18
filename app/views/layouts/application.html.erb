@@ -13,10 +13,17 @@
       <div class="navbar-header">
         <%= link_to "gCamp", root_path, class: "navbar-brand" %>
       </div>
-      <div class="navbar-right">
-        <%= link_to "Sign Up", signup_path, method: :post, class: "navbar-brand" %>
-        <%= link_to "Sign In", signin_path, class: "navbar-brand" %>
-      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %> 
+          <div class="navbar-brand">
+            <li><%= current_user.first_name %> <%= current_user.last_name %></li>
+          </div>
+          <li><%= link_to "Sign Out", signout_path, class: "navbar-brand" %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", signup_path, class: "navbar-brand" %></li>
+          <li><%= link_to "Sign In", signin_path, class: "navbar-brand" %></li>
+        <% end %>
+      </ul>
     </div>
   </nav>
 

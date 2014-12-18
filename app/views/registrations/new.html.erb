@@ -1,40 +1,39 @@
 <div class="well col-md-8 col-md-offset-2">
   <h1>Sign Up for gCamp!</h1>
-  <%= form_for(@user, html: {class: "form-group"}) do |f| %>
+  <%= form_for(@user, url: signup_path, html: {class: "form-group"}) do |f| %>
+
+    <% if @user.errors.present? %>
+      <div class="alert alert-danger">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="form-group">
         <%= f.label :first_name, class: "control-label" %>
-        <!-- <div class=""> -->
-          <%= f.text_field :first_name, class: "form-control" %>
-        <!-- </div> -->
+        <%= f.text_field :first_name, class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.label :last_name, class: "control-label" %>
-        <div class="">
-          <%= f.text_field :last_name, class: "form-control" %>
-        </div>
+        <%= f.text_field :last_name, class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.label :email, class: "control-label" %>
-        <div class="">
-          <%= f.email_field :email, class: "form-control" %>
-        </div>
+        <%= f.email_field :email, class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.label :password, class: "control-label" %>
-        <div class="">
-          <%= f.password_field :password, class: "form-control" %>
-        </div>
+        <%= f.password_field :password, class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.label :password_confirmation, class: "control-label" %>
-        <div class="">
-          <%= f.password_field :password_confirmation, class: "form-control" %>
-        </div>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
     </div>
     <div class="form-group">
-      <div class="">
-        <%= f.submit "Sign Up", class: "btn btn-primary" %>
-      </div>
+      <%= f.submit "Sign Up", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
