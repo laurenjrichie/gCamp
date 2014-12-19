@@ -1,27 +1,28 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_project
 
   def index
-    @tasks = Task.all
+    @tasks = @project.tasks
 
     if params[:completed]
-      @tasks = Task.where(:completed => params[:completed])
+      @tasks = @project.tasks.where(:completed => params[:completed])
     end
 
      if params[:order_description] == "true"
-       @tasks = Task.all.order(:description)
+       @tasks = @project.tasks.all.order(:description)
      end
 
      if params[:completed] && params[:order_description] == "true"
-       @tasks = Task.where(:completed => params[:completed]).order(:description)
+       @tasks = @project.tasks.where(:completed => params[:completed]).order(:description)
      end
 
      if params[:order_due_date] == "true"
-       @tasks = Task.all.order(:due_date)
+       @tasks = @project.tasks.all.order(:due_date)
      end
 
      if params[:completed] && params[:order_due_date] == "true"
-       @tasks = Task.where(:completed => params[:completed]).order(:due_date)
+       @tasks = @project.tasks.where(:completed => params[:completed]).order(:due_date)
      end
 
     respond_to do |format|
@@ -37,14 +38,14 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = @project.tasks.new
   end
 
   def edit
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = @project.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -79,7 +80,11 @@ class TasksController < ApplicationController
 
   private
   def set_task
-    @task = Task.find(params[:id])
+    @task = @project.tasks.find(params[:id])
+  end
+
+  def set_project
+    @project = Project.find(params[:project_id])
   end
 
   def task_params

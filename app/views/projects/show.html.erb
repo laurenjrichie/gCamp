@@ -16,5 +16,5 @@
 </ol>
 
 <p>
-  <%= link_to "4 Tasks", tasks_path %>
+  <%= link_to "#{@project.tasks.count} Tasks", project_tasks_path(@project) %>
 </p>
