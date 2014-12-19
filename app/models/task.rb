@@ -8,4 +8,6 @@ class Task < ActiveRecord::Base
     end
   end
 
+  belongs_to :project
+
 end

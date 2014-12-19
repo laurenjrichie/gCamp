@@ -1,9 +1,20 @@
-<h1>
-  <div class="col-md-10">
-    <%= @project.name %>
-  </div>
-  <div class="col-md-2">
+<div class="page-header">
+  <div class="pull-right">
     <%= link_to "Edit", edit_project_path, class: "btn btn-info" %>
     <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
   </div>
-</h1>
+  <h1><%= @project.name %></h1>
+</div>
+
+<ol class="breadcrumb col-md-12">
+  <li>
+    <%= link_to "Projects", projects_path %>
+  </li>
+  <li class="active">
+    <%= @project.name %>
+  </li>
+</ol>
+
+<p>
+  <%= link_to "4 Tasks", tasks_path %>
+</p>
