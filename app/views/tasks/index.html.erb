@@ -7,8 +7,20 @@
     <% end %>
     <%= link_to 'New Task', new_project_task_path(@project), class: "btn btn-info" %>
   </div>
-  <h1>Tasks</h1>
+  <h1>Tasks for <%= @project.name %></h1>
 </div>
+
+<ol class="breadcrumb col-md-12">
+  <li>
+    <%= link_to "Projects", projects_path %>
+  </li>
+  <li>
+    <%= link_to @project.name, project_path(@project) %>
+  </li>
+  <li class="active">
+    Tasks
+  </li>
+</ol>
 
 <table class="table">
   <thead>
@@ -26,9 +38,9 @@
       <td class="col-md-5"><%= task.description %></td>
       <td class="col-md-2"><%= task.completed %></td>
       <td class="col-md-2"><%= task.due_date %></td>
-      <td><%= link_to 'Show', task, class: "btn btn-success" %></td>
-      <td><%= link_to 'Edit', edit_task_path(task), class: "btn btn-info" %></td>
-      <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      <td><%= link_to 'Show', project_task_path(@project, task), class: "btn btn-success" %></td>
+      <td><%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn btn-info" %></td>
+      <td><%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
     </tr>
     <% end %>
   </tbody>

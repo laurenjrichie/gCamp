@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_project
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
     @tasks = @project.tasks
@@ -49,33 +49,24 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
+        format.html { redirect_to project_tasks_path(@project), notice: 'Task was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
-      else
-        format.html { render :edit }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
+    if @task.update(task_params)
+      redirect_to project_task_path(@project, @task), notice: 'Task was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @task.destroy
-    respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to project_tasks_path(@project), notice: 'Task was successfully destroyed.'
   end
 
   private
@@ -88,6 +79,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:description, :completed, :due_date)
+    params.require(:task).permit(:description, :completed, :due_date, :project_id)
   end
 end
