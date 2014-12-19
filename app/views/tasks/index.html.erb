@@ -38,7 +38,7 @@
       <td class="col-md-5"><%= task.description %></td>
       <td class="col-md-2"><%= task.completed %></td>
       <td class="col-md-2"><%= task.due_date %></td>
-      <td><%= link_to 'Show', project_task_path(@project, task), class: "btn btn-success" %></td>
+      <td><%= link_to 'Show', project_task_path(@project, task), class: "btn btn-success", id: "show-task-#{task.id}-action" %></td>
       <td><%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn btn-info" %></td>
       <td><%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
     </tr>
