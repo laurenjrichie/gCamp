@@ -18,3 +18,7 @@
 <p>
   <%= link_to "#{@project.tasks.count} Tasks", project_tasks_path(@project) %>
 </p>
+
+<p>
+  <%= link_to "#{@project.users.count} Members", project_memberships_path(@project) %>
+</p>
