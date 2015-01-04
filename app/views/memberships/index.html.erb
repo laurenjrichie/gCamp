@@ -1,8 +1,6 @@
-<div class="page-header">
-  <h1>
-    <%= "#{@project.name}: Manage Members" %>
-  </h1>
-</div>
+<h1 class="page-header">
+  <%= "#{@project.name}: Manage Members" %>
+</h1>
 
 <ol class="breadcrumb col-md-12">
   <li>
@@ -16,10 +14,38 @@
   </li>
 </ol>
 
-<div class="well">
-  <%= form_for([@project, @membership], html: {class: "form form-inline"}) do |f| %>
+<div>
+  <%= form_for([@project, @membership], html: {class: "well form-inline col-md-12"}) do |f| %>
     <div class="form-group">
-      
+      <%= f.label :user, class: "control-label" %>
+      <%= f.collection_select :user_id, User.all, :id, :full_name, {prompt: "Please select a user..."}, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.select :role, ["member", "owner"], {include_blank: false}, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Add New Member", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
+
+<% @project.memberships.each do |membership| %>
+  <% if membership.user %>
+    <div class="row col-md-12">
+      <%= form_for([@project, @membership], url: project_membership_path(@project, membership), method: :patch, html: {class: "form-inline"}) do |f| %>
+        <div class="form-group col-md-2">
+          <%= link_to membership.user.full_name %>
+        </div>
+        <div class="form-group col-md-1">
+          <%= f.select :role, ["member", "owner"], {selected: membership.role}, class: "form-control" %>
+        </div>
+        <div class="form-group col-md-1">
+          <%= f.submit "Update", class: "btn btn-primary" %>
+        </div>
+        <div class="form-group col-md-1">
+          <%= link_to '', project_membership_path(@project, membership), method: :delete, data: {confirm: "Are you sure?"}, class: "glyphicon glyphicon-remove" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
