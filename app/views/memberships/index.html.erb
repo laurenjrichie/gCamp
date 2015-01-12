@@ -34,10 +34,11 @@
   <% end %>
 </div>
 
-<% @project.memberships.each do |membership| %>
+<% if @memberships %>
+<% @memberships.each do |membership| %>
   <% if membership.user %>
     <div class="row col-md-12">
-      <%= form_for([@project, @membership], url: project_membership_path(@project, membership), method: :patch, html: {class: "form-inline"}) do |f| %>
+      <%= form_for([@project, membership], url: project_membership_path(@project, membership), method: :patch, html: {class: "form-inline"}) do |f| %>
         <div class="form-group col-md-2">
           <%= link_to membership.user.full_name %>
         </div>
@@ -53,4 +54,5 @@
       <% end %>
     </div>
   <% end %>
+<% end %>
 <% end %>

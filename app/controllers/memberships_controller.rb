@@ -4,6 +4,7 @@ class MembershipsController < ApplicationController
   end
 
   def index
+    @memberships = @project.memberships
     @membership = @project.memberships.new
   end
 
@@ -21,7 +22,7 @@ class MembershipsController < ApplicationController
     if @membership.update(membership_params)
       redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was successfully updated"
     else
-      render :new
+      render :edit
     end
   end
 
