@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/laurenjrichie/gCamp.svg?branch=master)](https://travis-ci.org/laurenjrichie/gCamp)
 
-== GCamp
+# GCamp
 
 This is a project management app built following specs and wireframes given to me at gSchool,
 a six-month immersive web development school.
