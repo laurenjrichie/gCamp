@@ -1,10 +1,10 @@
-<div class="jumbotron">  <!-- rounded corners and no border OK? -->
+<div class="page-header text-center">
   <h1>gCamp</h1>
-  <p>Your life, organized.</p>
+  <h2><small>Your life, organized.</small></h2>
 </div>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 col-md-offset-2">
     <div class="panel panel-default">
       <%= image_tag 'tablet.jpg', class: 'img-responsive' %>
     </div>
@@ -14,35 +14,17 @@
       <%= image_tag 'paper.jpg', class: 'img-responsive' %>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <%= image_tag 'computers.jpg', class: 'img-responsive' %>
-    </div>
-  </div>
 </div>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 col-md-offset-2">
     <div class="panel panel-primary panel-height">
       <div class="panel-heading">
-        <h3 class="panel-title">Tasks</h3>
-      </div>
-      <div class="panel-body">
-        Grouped by comments and lists. Just the way you like'em.
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="panel panel-primary panel-height">
-      <div class="panel-heading">
-        <h3 class="panel-title">Documents</h3>
+        <h3 class="panel-title">Users</h3>
       </div>
       <div class="panel-body">
         <ul>
-          <li>Upload</li>
-          <li>Comment</li>
-          <li>Revise</li>
+          <li>Add users and manage relation to projects through memberships.</li>
         </ul>
       </div>
     </div>
@@ -51,24 +33,15 @@
   <div class="col-md-4">
     <div class="panel panel-primary panel-height">
       <div class="panel-heading">
-        <h3 class="panel-title">Comments</h3>
+        <h3 class="panel-title">Projects</h3>
       </div>
       <div class="panel-body">
         <ul>
-          <li>Comment on tasks and documents</li>
-          <li>Get email notifications</li>
+          <li>Create, edit and delete projects.</li>
+          <li>Projects have associated tasks and members.</li>
         </ul>
       </div>
     </div>
   </div>
-</div>
 
-
-<div class="row container">
-  <% @quotes.each do |quote| %>
-  <blockquote>
-    <p class="lead"><%= quote[0] %></p>
-    <p><em><%= quote[1] %></em></p>
-  </blockquote>
-  <% end %>
 </div>

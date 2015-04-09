@@ -2,8 +2,7 @@
 
 # GCamp
 
-This is a project management app built following specs and wireframes given to me at gSchool,
-a six-month immersive web development school.
+This is a project management app modeled after Basecamp.
 
 Users can register, sign in, create projects and associated tasks, and manage members.
 
